@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "chathacks",
+  "version": "${version}",
+
+  "name": "hhhzzzsss-mod",
+  "description": "Funny kaboom hack",
+  "authors": [
+    "hhhzzzsss"
+  ],
+  "contact": {
+    "homepage": "https://github.com/hhhzzzsss",
+    "sources": "https://github.com/hhhzzzsss"
+  },
+
+  "license": "CC0-1.0",
+  "icon": "assets/chathacks/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.hhhzzzsss.chathacks.ChatHacks"
+    ]
+  },
+  "mixins": [
+    "chathacks.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

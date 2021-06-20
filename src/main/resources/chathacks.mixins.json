@@ -1,0 +1,24 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.github.hhhzzzsss.chathacks.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+  	"AntiCrashPositionTracker",
+  	"ChatHandler",
+  	"ChatterUsernameUpdater",
+  	"ClientPlayerInteractionManagerMixin",
+  	"ClientPlayNetworkHandlerMixin",
+  	"EntityS2CPacketAccessor",
+  	"MinecraftClientMixin",
+  	"SharedConstantsMixin",
+  	"SkullBlockEntityMixin",
+  	"SpamChecker",
+  	"TextureManagerMixin",
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
