@@ -136,8 +136,12 @@ Replaced with the uuid you set with `setuuid`
 Recursively replaced with the contents of the plist pane in the Chatter window. Multiple list entries does not work well in the current version of Kaboom due to the chat ratelimit.
 ### $ulist
 Recursively replaced with the uuids of players in tablist. Does not work well in the current version of Kaboom due to the chat ratelimit.
+
+This part of the code has been commented out.
 ### $tlist
 Recursively replaced with the names of players in tablist. Does not work well in the current version of Kaboom due to the chat ratelimit.
+
+This part of the code has been commented out.
 ### $coords
 Replaced with your current block coordinates (integer coordinates).
 ### $mapcoords
