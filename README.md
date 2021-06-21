@@ -12,7 +12,7 @@ broken
 
 makes each right click throw multiple items at once
 ### immortal
-No longer works in current version of Kaboom.
+No longer works in current version of Kaboom. Additionally, I never ported this code over because the exploit no longer worked.
 
 When you die, death is ignored and you continue moving around in a half-alive state. You can interact with the world and chat, but people can't kill you, even with /kill.
 ### drop
