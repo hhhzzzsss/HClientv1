@@ -9,7 +9,12 @@ Enables fast click, in which right clicking repeats very fast.
 Returns clicking to normal speed
 ### throw \<amount>
 broken
+
 makes each right click throw multiple items at once
+### immortal
+No longer works in current version of Kaboom.
+
+When you die, death is ignored and you continue moving around in a half-alive state. You can interact with the world and chat, but people can't kill you, even with /kill.
 ### drop
 Toggles drop mode.
 
@@ -65,6 +70,7 @@ The bot recognizes the following flags:
 * -c enables copy mode on the bot
 * -d enables drop mode on the bot
 * -a enables attack mode on the bot
+* -i appends the bot's id to the end of their name (zero-padded to 4 digits)
 
 You cannot combine flags like `bot -oca hi`. The flags have to be like this: `bot -o -c -a hi`.
 ### botname \<name> [flags] \<login message>
@@ -105,4 +111,34 @@ Picks a bot that you tried to log in but failed and tries to log it in again. If
 
 ## Chatter
 The chatter is a separate window that pops up with various displays and features.
-This section is to be added...
+### Username List
+The top panel shows a list of usernames alongside their uuid. If you have any saved uuids, it will also show players' login names in parentheses. This list is based on tablist entries, so it will only display the players that exist in tablist. In order to see vanished players, try using `updateuuid`.
+### $plist
+The grey box on the left is a list of entries that you can assign to $plist. When you say something containing $plist, it expands it by looping through plist and, for each entry, sending a command that replaces $plist with that entry. Due to the chat ratelimit that was implemented, this doesn't really work anymore.
+### Command log
+The right pane is a log of commandspy commands.
+### Center Pane
+The central pane is where you can type messages you want to be sent to chat. If you type multiple messages, they all get sent (although current versions of kaboom have a ratelimit so it won't necessarily work that well).
+
+If a line is preceded by `loop`, the message  will be looped. You can also preceed a line by sloop and floop which correspond to slow loop and fast loop respectively. This is compatible with client commands, so for example, if you do `loop botsayid 0 hi there` the bot with id 0 will say "hi there" on a loop. This is a convenient way to do basic "scripting" of the bot.
+
+You can also do `setusername <username>` in this pane to change your username for the next login.
+
+The messages and directives in this pane only get processed when you hit the reload button.
+### Reload button
+Processes the stuff you write in the center pane.
+
+## Chat Replacements
+Some terms (generally starting with $) will get replaced by the client.
+### $uuid
+Replaced with the uuid you set with `setuuid`
+### $plist
+Recursively replaced with the contents of the plist pane in the Chatter window. Multiple list entries does not work well in the current version of Kaboom due to the chat ratelimit.
+### $ulist
+Recursively replaced with the uuids of players in tablist. Does not work well in the current version of Kaboom due to the chat ratelimit.
+### $tlist
+Recursively replaced with the names of players in tablist. Does not work well in the current version of Kaboom due to the chat ratelimit.
+### $coords
+Replaced with your current block coordinates (integer coordinates).
+### $mapcoords
+Replaced with the corner of the nearest map grid tile.
