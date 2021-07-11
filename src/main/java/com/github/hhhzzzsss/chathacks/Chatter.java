@@ -98,16 +98,22 @@ public class Chatter implements ActionListener{
 		boolean newFile = true;
 		try {
 			newFile = uuidLog.createNewFile();
-			OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(uuidLog),Charset.forName("UTF-8").newEncoder());
-			writer.write("{\n}");
-			writer.flush();
-			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 			System.exit(1);
 		}
 		
-		if (!newFile) {
+		if (newFile) {
+			try {
+				OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(uuidLog),Charset.forName("UTF-8").newEncoder());
+				writer.write("{\n}");
+				writer.flush();
+				writer.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		else {
 			try {
 				InputStreamReader reader = new InputStreamReader(new FileInputStream(uuidLog),Charset.forName("UTF-8").newDecoder());
 				char charArray[] = new char[(int) uuidLog.length()];
